@@ -14,14 +14,11 @@ if not os.path.exists(image_path):
 else:
     img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)  #1 is color, 0 is gray
 
-
-if img is None:
-    print("Error: Could not read image.")
-else:
-    cv2.imshow('Image', img)
-
-
-cv2.imwrite("new.jpg",img)
+    if img is None:
+        print("Error: Could not read image.")
+    else:
+        cv2.imshow('Image', img)
+        cv2.imwrite("new.jpg",img)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()   #release memory
